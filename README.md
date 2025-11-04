@@ -8,7 +8,7 @@ It integrates **LangChain**, **LangGraph**, **FAISS**, and **Google Gemini**, en
 The system operates in **two key stages**:  
 1️⃣ **Document Ingestion Agent (Backend):** Handles automated loading, embedding, and FAISS vector database updates.  
 2️⃣ **RAG + LLM + UI (Frontend):** Provides real-time intelligent question answering with context retrieval, summarization, and memory.
-
+---
 
 # ✨ Features
 | Feature | Description |
@@ -25,7 +25,7 @@ The system operates in **two key stages**:
 | 📡 Memory-Enabled Conversations | Maintains contextual flow using `ConversationBufferMemory`. |
 | 🕵️ Watcher Agent | Continuously monitors the data folder and triggers re-ingestion automatically. |
 | ✅ Academic Filter | Restricts to academic queries only; politely blocks unrelated or personal questions. |
-
+---
 # 🏗️ EDUBOT Document Ingestion Architecture (LangGraph Workflow)
 ![Ingestion Architecture](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/Injestion%20Architecture.png)
 
@@ -113,10 +113,6 @@ sequentially to ensure smooth execution and error handling.
 - Automatically re-runs the LangGraph pipeline upon any file change.
 - Maintains continuous synchronization between local documents and vector database.
 
-# 🧭 EDUBOT HIGH LEVEL ARCHITECTURE
-
-![EDUBOT High Level Architecture](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/Screenshot%20(505).png)
-
 
 # 💾 Storage Components
 
@@ -132,7 +128,72 @@ sequentially to ensure smooth execution and error handling.
 ## Log File (update_log.txt)
 - Tracks every ingestion cycle with timestamps, errors, and chunk details.
 
+---
 
+# 🧭 EDUBOT HIGH LEVEL ARCHITECTURE
+
+![EDUBOT High Level Architecture](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/Screenshot%20(505).png)
+
+## 🔷 EDUBOT RAG PIPELINE EXPLANATION
+
+The diagram above represents the **Retrieval-Augmented Generation (RAG)** architecture used in **EDUBOT**.  
+It combines document retrieval and large language model reasoning to provide accurate, context-aware responses.
+
+### 🧩 Step-by-Step Workflow
+
+1️⃣ **Document Input**  
+   - The pipeline begins with multiple input documents (PDFs, DOCX, etc.).  
+   - These are preprocessed and sent for text extraction.
+
+2️⃣ **Text Extraction**  
+   - Extracts readable text from all supported file types using document loaders.  
+   - Removes formatting and metadata to keep only clean, processable content.
+
+3️⃣ **Chunking**  
+   - Long texts are split into smaller, overlapping chunks.  
+   - This improves embedding quality and ensures better semantic retrieval.
+
+4️⃣ **Vectorization (Embedding Generation)**  
+   - Each text chunk is converted into a numerical vector using a **Hugging Face embedding model (all-MiniLM-L6-v2)**.  
+   - These embeddings capture semantic meaning for efficient similarity search.
+
+5️⃣ **Vector Database (FAISS)**  
+   - All embeddings are stored in a FAISS vector store.  
+   - Enables fast and scalable similarity search when user queries are made.
+
+6️⃣ **User Query**  
+   - A user submits a natural-language question or prompt through the Streamlit UI.
+
+7️⃣ **Query Embedding & Similarity Search**  
+   - The query is also converted into an embedding vector.  
+   - FAISS compares it with stored document vectors to find the most relevant chunks.
+
+8️⃣ **Context Retrieval**  
+   - The top-matching chunks are retrieved and passed to the language model as context.  
+   - This ensures the model’s answer is grounded in real document data.
+
+9️⃣ **LLM Reasoning (Gemini / GPT)**  
+   - The language model generates an accurate, context-aware response.  
+   - Uses the retrieved content to ensure factual and relevant outputs.
+
+🔟 **Response Generation & Display**  
+   - The final response is formatted and shown to the user.  
+   - Optionally includes source highlighting or citation of document names.
+
+---
+
+### ⚙️ Key Features
+- Hybrid RAG pipeline combining **retrieval + generation**.  
+- **FAISS vector DB** ensures low-latency document search.  
+- **LangChain orchestration** connects embedding, retrieval, and LLM reasoning.  
+- Fully **local and offline-compatible** with open-source models.
+
+---
+
+✅ **Summary**  
+This architecture allows EDUBOT to provide reliable answers derived directly from the uploaded documents, ensuring accuracy, explainability, and transparency in every generated response.
+
+---
 
 # ⚙️ Setup Instructions
 
@@ -154,7 +215,7 @@ python "Document ingestion.py"
 # 4️⃣ Launch the RAG Assistant
 streamlit run app.py
 
-
+---
 # 🖥️ Example Usage
 
 Ask a question:
@@ -165,7 +226,7 @@ Artificial Intelligence (AI) is applied in robotics, healthcare, education, auto
 It enables machines to perform human-like decision-making, perception, and learning.
 
 Sources: ai_notes.pdf
-
+---
 # 🛠️ Tool Integration
 
 ## 🔹 Local Tools & Services
@@ -199,7 +260,7 @@ Sources: ai_notes.pdf
   - Organized FAISS vectorstore with metadata preservation
   - Automated file mapping, update logs, and error handling
   - Continuous monitoring by Watcher Agent for changes in Data folder
-
+---
 # 💻 System Requirements
 
 • Operating System: Windows 10/11, Linux (Ubuntu 20.04+), macOS 11+  
@@ -208,7 +269,7 @@ Sources: ai_notes.pdf
 • Storage: 5–10 GB free (for vector DB, logs, and local documents)  
 • GPU (Optional): NVIDIA GPU with CUDA support for BLIP and EasyOCR acceleration  
 • Dependencies: Refer to requirements.txt or setup instructions above  
-
+---
 # ⚙️ Tech Stack
 
 • LLM: Google Gemini 2.0 Flash  
@@ -221,7 +282,7 @@ Sources: ai_notes.pdf
 • Memory: ConversationBufferMemory (LangChain)  
 • Logging: Auto timestamped logs for ingestion & updates  
 • UI: Streamlit with custom HTML/CSS chat interface  
-
+---
 
 # 📊 Highlights
 
@@ -233,7 +294,7 @@ Sources: ai_notes.pdf
 ✅ Integrated image-to-text and captioning (EasyOCR + BLIP)  
 ✅ Auto logging of ingestion activity and FAISS vector updates  
 ✅ Modern Streamlit UI with chat history, new chat, and logout features  
-
+---
 
 # 🧾 Performance & Metrics
 
@@ -241,14 +302,14 @@ Sources: ai_notes.pdf
 📊 Semantic Similarity: ≥ 0.85 (average on reference-based tests)  
 🧮 Evaluation Metrics: BLEU, ROUGE-L, and Cosine Similarity  
 🧠 Memory Retention: Full conversation buffer (preserves context during chat)  
-
+---
 
 # 🪪 License
 
 This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
 You are free to use, modify, and distribute this software under the same license terms.  
 
-
+---
 # 🙌 Acknowledgements
 
 🔹 **LangChain / LangGraph** — For building the ingestion and retrieval orchestration backbone.  
@@ -256,3 +317,4 @@ You are free to use, modify, and distribute this software under the same license
 🔹 **Google Gemini** — For powering the LLM responses with contextual reasoning.  
 🔹 **Streamlit** — For creating an elegant and interactive user interface.  
 🔹 **AAIDC Module 2 Program** — For project structure, certification guidance, and evaluation standards.  
+---
