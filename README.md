@@ -29,26 +29,26 @@ The system operates in **two key stages**:
 
 # ⚙️ Setup Instructions
 
-#1️⃣ Install Dependencies
+# 1️⃣ Install Dependencies
 Make sure you have Python 3.11+ installed, then run:
 
 pip install streamlit langchain langgraph faiss-cpu sentence-transformers transformers easyocr google-generativeai evaluate rouge-score python-docx PyPDF2 python-pptx openpyxl pillow python-dotenv
 
 
-#2️⃣ Add Documents
+# 2️⃣ Add Documents
 Place your TXT, PDF, PPTX, DOCX, or XLSX files inside the Data/ folder.
 Ensure PDFs are text-based (not scanned images).
 
 
-#3️⃣ Run Document Ingestion Agent
+# 3️⃣ Run Document Ingestion Agent
 python "Document ingestion.py"
 
 
-#4️⃣ Launch the RAG Assistant
+# 4️⃣ Launch the RAG Assistant
 streamlit run app.py
 
 
-#🖥️ Example Usage
+# 🖥️ Example Usage
 
 Ask a question:
 What are the applications of Artificial Intelligence?
@@ -59,7 +59,7 @@ It enables machines to perform human-like decision-making, perception, and learn
 
 Sources: ai_notes.pdf
 
-#📊 Highlights
+# 📊 Highlights
 
 ✅ Agentic document ingestion using LangGraph workflow (detect → ingest → validate)  
 ✅ Real-time RAG assistant powered by Google Gemini 2.0 Flash  
@@ -71,7 +71,7 @@ Sources: ai_notes.pdf
 ✅ Modern Streamlit UI with chat history, new chat, and logout features  
 
 
-#🧾 Performance & Metrics
+# 🧾 Performance & Metrics
 
 ⚡ Avg. Response Time: 2–4 seconds (text)  
 📊 Semantic Similarity: ≥ 0.85 (average on reference-based tests)  
@@ -79,13 +79,13 @@ Sources: ai_notes.pdf
 🧠 Memory Retention: Full conversation buffer (preserves context during chat)  
 
 
-#🪪 License
+# 🪪 License
 
 This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
 You are free to use, modify, and distribute this software under the same license terms.  
 
 
-#🙌 Acknowledgements
+# 🙌 Acknowledgements
 
 🔹 **LangChain / LangGraph** — For building the ingestion and retrieval orchestration backbone.  
 🔹 **Hugging Face** — For providing open-source embedding and summarization models.  
