@@ -113,10 +113,9 @@ sequentially to ensure smooth execution and error handling.
 - Automatically re-runs the LangGraph pipeline upon any file change.
 - Maintains continuous synchronization between local documents and vector database.
 
-# 🏗️ EDUBOT High Level Architecture 
-# 🧭 High Level Architecture
+# 🧭 EDUBOT HIGH LEVEL ARCHITECTURE
 
-[![High Level Architecture](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/High%20Level%20Architecture.pdf)]
+![EDUBOT High Level Architecture](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/Screenshot%20(505).png)
 
 
 # 💾 Storage Components
