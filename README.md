@@ -116,7 +116,7 @@ sequentially to ensure smooth execution and error handling.
 # 🏗️ EDUBOT High Level Architecture 
 # 🧭 High Level Architecture
 
-[![High Level Architecture](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/Injestion%20Architecture.png)](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/High%20Level%20Architecture.pdf)
+[![High Level Architecture](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/High%20Level%20Architecture.pdf)]
 
 
 # 💾 Storage Components
