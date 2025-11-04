@@ -63,32 +63,32 @@ Sources: ai_notes.pdf
 
 ## 🔹 Local Tools & Services
 
-• Gemini LLM Integration (Google Gemini)
+### Gemini LLM Integration (Google Gemini)
   - Large language model inference for academic reasoning and summarization
   - Configurable temperature and output tokens for adaptive responses
   - Provides accurate, context-aware, and educational answers
 
-• Document Ingestion Agent (LangGraph + LangChain)
+### Document Ingestion Agent (LangGraph + LangChain)
   - Automated multi-format file processing (TXT, PDF, DOCX, PPTX, XLSX)
   - StateGraph-driven workflow: detect → ingest → validate
   - Real-time file watching with auto vector DB updates
 
-• Embedding & Retrieval Engine
+### Embedding & Retrieval Engine
   - Embeddings generated via HuggingFace MiniLM (all-MiniLM-L6-v2)
   - Vector indexing and retrieval powered by FAISS
   - Persistent FAISS storage for long-term memory
 
-• Evaluation & Analysis Tools
+### Evaluation & Analysis Tools
   - Integrated BLEU, ROUGE, and cosine similarity scoring
   - Automatic semantic similarity tracking for generated responses
   - Logging of ingestion events and evaluation metrics
 
-• Image Understanding Agent
+### Image Understanding Agent
   - OCR extraction using EasyOCR
   - Visual captioning with BLIP (Salesforce/blip-image-captioning-base)
   - Summarization of detected text for study notes
 
-• File Management & Logging
+### File Management & Logging
   - Organized FAISS vectorstore with metadata preservation
   - Automated file mapping, update logs, and error handling
   - Continuous monitoring by Watcher Agent for changes in Data folder
