@@ -1,8 +1,7 @@
-# AAIDC Module-1- RAG
-# 🤖 EDUBOT – Intelligent Agentic RAG Assistant
+# 🤖 EDURAG – Intelligent Q&A Agentic RAG Assistant
 
 # 📌 Overview  
-EDUBOT is an advanced **Retrieval-Augmented Generation (RAG)** and **Agentic AI system** designed for educational and document-based learning.  
+EDUBOT is an advanced **Retrieval-Augmented Generation (RAG)** and **Agentic AI system** designed for educational and document-based learning. 
 It integrates **LangChain**, **LangGraph**, **FAISS**, and **Google Gemini**, enabling seamless document ingestion, continuous monitoring, and interactive Q&A — all inside a beautiful **Streamlit** interface.
 
 The system operates in **two key stages**:  
@@ -224,7 +223,6 @@ What are the applications of Artificial Intelligence?
 Answer:
 Artificial Intelligence (AI) is applied in robotics, healthcare, education, autonomous vehicles, and recommendation systems.  
 It enables machines to perform human-like decision-making, perception, and learning.
-
 Sources: ai_notes.pdf
 ---
 # 🛠️ Tool Integration
