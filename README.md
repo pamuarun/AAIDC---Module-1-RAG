@@ -59,6 +59,63 @@ It enables machines to perform human-like decision-making, perception, and learn
 
 Sources: ai_notes.pdf
 
+# 🛠️ Tool Integration
+
+## 🔹 Local Tools & Services
+
+• Gemini LLM Integration (Google Gemini)
+  - Large language model inference for academic reasoning and summarization
+  - Configurable temperature and output tokens for adaptive responses
+  - Provides accurate, context-aware, and educational answers
+
+• Document Ingestion Agent (LangGraph + LangChain)
+  - Automated multi-format file processing (TXT, PDF, DOCX, PPTX, XLSX)
+  - StateGraph-driven workflow: detect → ingest → validate
+  - Real-time file watching with auto vector DB updates
+
+• Embedding & Retrieval Engine
+  - Embeddings generated via HuggingFace MiniLM (all-MiniLM-L6-v2)
+  - Vector indexing and retrieval powered by FAISS
+  - Persistent FAISS storage for long-term memory
+
+• Evaluation & Analysis Tools
+  - Integrated BLEU, ROUGE, and cosine similarity scoring
+  - Automatic semantic similarity tracking for generated responses
+  - Logging of ingestion events and evaluation metrics
+
+• Image Understanding Agent
+  - OCR extraction using EasyOCR
+  - Visual captioning with BLIP (Salesforce/blip-image-captioning-base)
+  - Summarization of detected text for study notes
+
+• File Management & Logging
+  - Organized FAISS vectorstore with metadata preservation
+  - Automated file mapping, update logs, and error handling
+  - Continuous monitoring by Watcher Agent for changes in Data folder
+
+# 💻 System Requirements
+
+• Operating System: Windows 10/11, Linux (Ubuntu 20.04+), macOS 11+  
+• Python Version: 3.10 or higher (tested on 3.11)  
+• RAM: Minimum 8 GB (16 GB recommended for faster embedding and LLM inference)  
+• Storage: 5–10 GB free (for vector DB, logs, and local documents)  
+• GPU (Optional): NVIDIA GPU with CUDA support for BLIP and EasyOCR acceleration  
+• Dependencies: Refer to requirements.txt or setup instructions above  
+
+# ⚙️ Tech Stack
+
+• LLM: Google Gemini 2.0 Flash  
+• Frameworks: LangChain, LangGraph, Streamlit  
+• Embeddings: HuggingFace MiniLM (all-MiniLM-L6-v2)  
+• Vector Database: FAISS (local persistent store)  
+• OCR & Image Captioning: EasyOCR, BLIP (Salesforce)  
+• Document Loaders: LangChain Unstructured, PyPDFLoader, Docx2txt, PowerPoint, Excel loaders  
+• Evaluation Metrics: BLEU, ROUGE, Cosine Similarity  
+• Memory: ConversationBufferMemory (LangChain)  
+• Logging: Auto timestamped logs for ingestion & updates  
+• UI: Streamlit with custom HTML/CSS chat interface  
+
+
 # 📊 Highlights
 
 ✅ Agentic document ingestion using LangGraph workflow (detect → ingest → validate)  
