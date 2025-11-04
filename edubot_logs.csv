@@ -1,0 +1,81 @@
+Query,Answer,SemanticSim
+Query,Answer,SemanticSim
+Hi,Hi there! How can I help you today? Are you working on a specific topic or do you have any questions I can answer?,0.2637
+what is rag,"RAG stands for Retrieval-Augmented Generation. It's a technique that enhances the capabilities of large language models (LLMs) by allowing them to access and incorporate information from external sources when generating responses.
+
+In essence, RAG combines two main processes:
+1.  **Retrieval**: The system fetches relevant information from a database or collection of documents based on the user's query.
+2.  **Generation**: The LLM uses the retrieved information to generate a more informed and contextually accurate response.
+
+RAG is useful because it helps LLMs overcome limitations such as lack of up-to-date knowledge or inability to access specific information, making their responses more reliable and relevant.",0.5687
+Query,Answer,SemanticSim
+Hi,"Claro! No contexto de RAG (Retrieval-Augmented Generation), o processo de ""Retrieval"" é como o sistema busca informações relevantes para responder a uma pergunta. Aqui estão os passos principais de como ele funciona:
+
+1.  **Recebimento da Pergunta:** O sistema recebe a pergunta do usuário.
+2.  **Transformação da Pergunta:** A pergunta é transformada em um formato que o sistema possa entender e usar para buscar informações. Isso pode envolver a criação de vetores de palavras ou frases que representam o significado da pergunta.
+3.  **Busca de Informações:** O sistema usa a pergunta transformada para buscar informações em uma base de dados ou coleção de documentos. Essa busca pode ser feita usando diferentes técnicas, como busca por similaridade semântica (encontrar informações com significado semelhante) ou busca por palavras-chave.
+4.  **Seleção das Informações Mais Relevantes:** O sistema seleciona as informações que são mais relevantes para a pergunta do usuário. Isso pode envolver a classificação das informações por relevância e a escolha das informações mais bem classificadas.
+5.  **Envio das Informações para o Modelo de Geração:** As informações selecionadas são enviadas para o modelo de geração, que as usa para criar uma resposta para a pergunta do usuário.
+
+O objetivo do processo de ""Retrieval"" é fornecer ao modelo de geração as informações mais relevantes e úteis para que ele possa criar uma resposta precisa e informativa.",0.2374
+Query,Answer,SemanticSim
+Hi,"Hi there! I'm EDUBOT, your AI tutor. I'm here to help you understand different topics. Feel free to ask me anything!",0.3113
+What is RAG,"RAG stands for Retrieval-Augmented Generation. It's a technique that enhances the capabilities of large language models (LLMs) by allowing them to access and incorporate information from external sources when generating responses.
+
+In essence, RAG combines two main processes:
+1.  **Retrieval**: The system fetches relevant information from a knowledge base or database in response to a user's query.
+2.  **Generation**: The LLM uses the retrieved information to generate a more accurate, context-aware, and informative response.
+
+RAG is useful because it helps LLMs overcome limitations such as lack of up-to-date information or specific domain knowledge. By grounding the LLM's responses in external knowledge, RAG improves the quality, reliability, and trustworthiness of the generated content. It's used in applications like chatbots, question answering systems, and content creation tools to provide more comprehensive and relevant answers.",0.5731
+what is pyspark,"PySpark is the Python API for Apache Spark, an open-source, distributed computing system designed for big data processing and analytics. It allows data engineers and scientists to interact with Spark using Python, leveraging Spark's capabilities for data manipulation, analysis, and machine learning.
+
+Here's a breakdown:
+*   **Definition**: PySpark provides an interface for Spark in Python, enabling you to write Spark applications using Python syntax.
+*   **Scope**: It includes modules for Spark Core, Spark SQL, Spark Streaming, MLlib (machine learning library), and GraphX (graph processing).
+*   **Uses**: PySpark is used for large-scale data processing, ETL (Extract, Transform, Load) operations, machine learning, real-time data streaming, and graph analysis.
+*   **Applications**: It's applied in various industries, including finance, healthcare, e-commerce, and social media, for tasks like fraud detection, predictive modeling, and personalized recommendations.",0.4734
+functions in it,"PySpark includes a variety of functions organized into different modules to support various data processing and analysis tasks. These functions can be broadly categorized as follows:
+
+*   **Spark Core Functions**: These are fundamental functions for data manipulation and transformation. They include `map`, `filter`, `reduce`, `groupBy`, and `sort`. These functions allow you to perform basic operations on Resilient Distributed Datasets (RDDs) and DataFrames.
+    *   Example: `df.filter(df[""age""] > 25)` filters a DataFrame to include only rows where the age is greater than 25.
+*   **Spark SQL Functions**: These functions are used for querying and manipulating structured data using SQL-like syntax. They include `select`, `where`, `groupBy`, `orderBy`, `join`, and aggregate functions like `sum`, `avg`, `min`, and `max`.
+    *   Example: `df.groupBy(""department"").agg(F.avg(""salary""))` groups the DataFrame by department and calculates the average salary for each department.
+*   **Spark Streaming Functions**: These functions are designed for real-time data processing. They include `window`, `foreachRDD`, `transform`, and `updateStateByKey`. These functions allow you to process continuous streams of data.
+    *   Example: `stream.window(30, 10)` creates a window of 30 seconds that slides every 10 seconds over a data stream.
+*   **MLlib (Machine Learning Library) Functions**: These functions provide machine learning algorithms and utilities. They include classification, regression, clustering, and dimensionality reduction algorithms, as well as feature transformers and model evaluation metrics.
+    *   Example: `LogisticRegression().fit(trainingData)` trains a logistic regression model on the provided training data.
+*   **GraphX Functions**: These functions are used for graph processing and analysis. They include graph algorithms like PageRank, connected components, and triangle counting, as well as functions for graph manipulation and querying.
+    *   Example: `graph.pageRank(0.01).vertices` calculates the PageRank for each vertex in a graph.
+
+These functions collectively enable PySpark to handle a wide range of data processing tasks, from basic data manipulation to advanced analytics and machine learning.",0.0058
+Query,Answer,SemanticSim
+Hi,"Hi there! I'm EDUBOT, your AI tutor. I'm here to help you understand different topics. Feel free to ask me any questions you have. I can explain things, provide examples, and offer context to help you learn. Let's get started! What would you like to learn about today?",0.2626
+who won the ipl in 2025,"I cannot provide you with information about who won the IPL in 2025. The information is not yet available. The Indian Premier League (IPL) is a professional Twenty20 cricket league in India, typically held annually between March and May. Since the tournament for 2025 has not yet happened, the winner is unknown.",0.0981
+who won in 2024 then,"Who won the IPL in 2024? The Kolkata Knight Riders (KKR) won the Indian Premier League (IPL) title in 2024, securing their victory against the Sunrisers Hyderabad (SRH) in the final match. The Kolkata Knight Riders (KKR) demonstrated strong performance throughout the season, which led to their ultimate success. Winning the IPL is a significant achievement in the world of cricket, bringing recognition, prize money, and opportunities for players and the team. The victory was celebrated by fans and marked a memorable moment in the history of the IPL.",0.2337
+when was RCB won the ipl?,"I cannot provide you with the exact date when Royal Challengers Bangalore (RCB) won the IPL because, as of now, RCB has not won any IPL title. While they have a strong fan base and have featured prominent players, they haven't secured a victory in the IPL tournament. The Indian Premier League (IPL) is typically held annually between March and May.",0.07
+what is thermodynamics,"What is thermodynamics? Thermodynamics is a branch of physics that deals with heat, work, and energy, and the relationships between them. It explains how thermal energy is converted to other forms of energy and how it affects matter.
+
+Thermodynamics is used in various applications, including:
+1.  **Engines:** Understanding how engines convert thermal energy into mechanical work.
+2.  **Refrigeration:** Designing refrigerators and air conditioners that transfer heat from one place to another.
+3.  **Materials Science:** Studying the thermal properties of materials and their behavior under different temperatures and pressures.
+4.  **Chemical Reactions:** Analyzing the energy changes in chemical reactions, such as heat released or absorbed.
+5.  **Power Generation:** Optimizing power plants to efficiently generate electricity from heat sources like fossil fuels or nuclear reactions.",0.2514
+give me applications in it,"What are some applications of thermodynamics? Thermodynamics has numerous applications across various fields of science and engineering due to its fundamental principles governing energy and its transformations.
+
+Here are some key applications:
+
+1.  **Power Generation**: Thermodynamics is crucial in designing and optimizing power plants, including those using fossil fuels, nuclear energy, and renewable sources like solar and geothermal. It helps in maximizing efficiency and reducing waste.
+2.  **Refrigeration and Air Conditioning**: The principles of thermodynamics are applied to develop refrigeration systems and air conditioners that transfer heat from one place to another, maintaining desired temperatures in homes, industries, and transportation.
+3.  **Engine Design**: Thermodynamics plays a vital role in designing internal combustion engines (like those in cars) and jet engines. It helps engineers improve engine performance, fuel efficiency, and reduce emissions.
+4.  **Materials Science**: Thermodynamics is used to study the thermal properties of materials, such as heat capacity, thermal expansion, and phase transitions. This knowledge is essential for selecting and processing materials in various applications.
+5.  **Chemical Reactions**: Thermodynamics helps in analyzing the energy changes in chemical reactions, determining whether a reaction will occur spontaneously, and calculating the amount of heat released or absorbed. This is important in chemical engineering and industrial processes.",0.1209
+Query,Answer,SemanticSim
+Hi,"Hi there! I'm EDUBOT, your AI tutor. I'm here to help you understand different topics and answer your questions. Feel free to ask me anything!",0.3093
+what is physics,"Physics is a branch of science that deals with matter, energy, space, and time, and their interactions.
+
+Here's a more detailed breakdown:
+*   **Scope**: Physics explores the fundamental laws governing the universe, from the smallest subatomic particles to the largest galaxies.
+*   **Uses**: Physics provides the foundation for many other sciences and technologies, including engineering, medicine, and computer science.
+*   **Applications**: Physics is used to develop new technologies, such as lasers, semiconductors, and medical imaging devices. It also helps us understand the world around us, from the weather to the movement of the planets.
+*   **Examples**: Classical mechanics (motion of objects), thermodynamics (heat and energy), electromagnetism (electricity and magnetism), quantum mechanics (behavior of matter at the atomic and subatomic level), and relativity (space, time, and gravity).",0.1978
