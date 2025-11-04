@@ -26,6 +26,92 @@ The system operates in **two key stages**:
 | 🕵️ Watcher Agent | Continuously monitors the data folder and triggers re-ingestion automatically. |
 | ✅ Academic Filter | Restricts to academic queries only; politely blocks unrelated or personal questions. |
 
+# 🏗️ EDUBOT Document Ingestion Architecture (LangGraph Workflow)
+## 📌 Overview
+
+The Document Ingestion system in EDUBOT automates the entire data pipeline —
+from file detection to embedding generation and vector database management.
+
+It uses a **LangGraph Agentic Workflow** to create a robust, modular,
+and the self-healing ingestion process.
+
+This ensures that new, modified, or deleted documents are automatically
+processed and reflected in the FAISS Vector Database without manual intervention.
+
+# 🔁 Workflow Overview
+START → DETECT → INGEST → VALIDATE → UPDATE VECTOR DB → END
+Each stage in this workflow corresponds to a LangGraph node, connected
+sequentially to ensure smooth execution and error handling.
+
+# 🧩 Step-by-Step Architecture Explanation
+## 1️⃣ START Node
+• Entry point of the workflow.
+• Initializes the LangGraph state and prepares the pipeline.
+• Triggers the first node: "Detect".
+
+## 2️⃣ DETECT Node
+• Scans the Data Folder for supported file types (.pdf, .pptx, .docx, .xlsx, .txt).
+• Identifies:
+    - New files to be ingested.
+    - Removed files to be deleted from FAISS.
+• Logs all file detection activity to `update_log.txt`.
+• Returns a dictionary of detected files as workflow state.
+
+## 3️⃣ INGEST Node
+• The heart of the ingestion process.
+• Loads and processes detected documents using LangChain loaders:
+    - PyPDFLoader, PyMuPDFLoader, Docx2txtLoader, UnstructuredPowerPointLoader, etc.
+• Splits documents into chunks using RecursiveCharacterTextSplitter.
+• Generates embeddings using HuggingFace `all-MiniLM-L6-v2`.
+• Adds the embeddings to FAISS Vector DB.
+• Updates `file_mapping.pkl` with vector IDs and chunk counts.
+• Removes deleted file embeddings from FAISS to maintain consistency.
+
+## 4️⃣ VALIDATE Node
+• Ensures FAISS database integrity after ingestion.
+• Checks:
+    - Whether FAISS DB exists and is accessible.
+    - Whether the total number of chunks matches expected values.
+• If validation passes → logs success.
+• If validation fails → logs error and stops the workflow.
+
+## 5️⃣ UPDATE VECTOR DB
+• Saves all updated FAISS indexes to disk.
+• Commits the latest file mapping (`file_mapping.pkl`) for future consistency.
+• Produces a summary of:
+    - Old chunks
+    - Added chunks
+    - Deleted chunks
+    - Final chunk total
+• Logs the final update summary to `update_log.txt`.
+
+## 6️⃣ END Node
+• Marks successful workflow completion.
+• Returns summarized ingestion statistics as the final output.
+
+# 👁️ Watcher Agent (Continuous Monitoring)
+• A background thread (`watcher_agent`) continuously monitors the Data Folder.
+• Polls every 5 seconds (configurable).
+• Detects:
+    - Newly added files → triggers LangGraph ingestion.
+    - Deleted files → removes their embeddings from FAISS.
+• Automatically re-runs the LangGraph pipeline upon any file change.
+• Maintains continuous synchronization between local documents and vector database.
+
+# 💾 Storage Components
+• Data Folder (D:\AAIDC\Project 1\Data)
+  - Holds all raw input documents (TXT, PDF, DOCX, PPTX, XLSX).
+
+• FAISS Vectorstore (D:\AAIDC\Project 1\vectorstore)
+  - Stores all dense embeddings for document retrieval.
+
+• File Mapping (file_mapping.pkl)
+  - Dictionary mapping each file path to its vector IDs and chunk counts.
+
+• Log File (update_log.txt)
+  - Tracks every ingestion cycle with timestamps, errors, and chunk details.
+
+
 
 # ⚙️ Setup Instructions
 
