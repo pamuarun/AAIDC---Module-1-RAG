@@ -45,45 +45,45 @@ sequentially to ensure smooth execution and error handling.
 
 # 🧩 Step-by-Step Architecture Explanation
 ## 1️⃣ START Node
-• Entry point of the workflow.
-• Initializes the LangGraph state and prepares the pipeline.
-• Triggers the first node: "Detect".
+- Entry point of the workflow.
+- Initializes the LangGraph state and prepares the pipeline.
+- Triggers the first node: "Detect".
 
 ## 2️⃣ DETECT Node
-• Scans the Data Folder for supported file types (.pdf, .pptx, .docx, .xlsx, .txt).
-• Identifies:
-    - New files to be ingested.
-    - Removed files to be deleted from FAISS.
-• Logs all file detection activity to `update_log.txt`.
-• Returns a dictionary of detected files as workflow state.
+- Scans the Data Folder for supported file types (.pdf, .pptx, .docx, .xlsx, .txt).
+- Identifies:
+    -- New files to be ingested.
+    -- Removed files to be deleted from FAISS.
+- Logs all file detection activity to `update_log.txt`.
+- Returns a dictionary of detected files as workflow state.
 
 ## 3️⃣ INGEST Node
-• The heart of the ingestion process.
-• Loads and processes detected documents using LangChain loaders:
-    - PyPDFLoader, PyMuPDFLoader, Docx2txtLoader, UnstructuredPowerPointLoader, etc.
-• Splits documents into chunks using RecursiveCharacterTextSplitter.
-• Generates embeddings using HuggingFace `all-MiniLM-L6-v2`.
-• Adds the embeddings to FAISS Vector DB.
-• Updates `file_mapping.pkl` with vector IDs and chunk counts.
-• Removes deleted file embeddings from FAISS to maintain consistency.
+- The heart of the ingestion process.
+- Loads and processes detected documents using LangChain loaders:
+    -- PyPDFLoader, PyMuPDFLoader, Docx2txtLoader, UnstructuredPowerPointLoader, etc.
+- Splits documents into chunks using RecursiveCharacterTextSplitter.
+- Generates embeddings using HuggingFace `all-MiniLM-L6-v2`.
+- Adds the embeddings to FAISS Vector DB.
+- Updates `file_mapping.pkl` with vector IDs and chunk counts.
+- Removes deleted file embeddings from FAISS to maintain consistency.
 
 ## 4️⃣ VALIDATE Node
-• Ensures FAISS database integrity after ingestion.
-• Checks:
-    - Whether FAISS DB exists and is accessible.
-    - Whether the total number of chunks matches expected values.
-• If validation passes → logs success.
-• If validation fails → logs error and stops the workflow.
+- Ensures FAISS database integrity after ingestion.
+- Checks:
+    -- Whether FAISS DB exists and is accessible.
+    -- Whether the total number of chunks matches expected values.
+- If validation passes → logs success.
+- If validation fails → logs error and stops the workflow.
 
 ## 5️⃣ UPDATE VECTOR DB
-• Saves all updated FAISS indexes to disk.
-• Commits the latest file mapping (`file_mapping.pkl`) for future consistency.
-• Produces a summary of:
-    - Old chunks
-    - Added chunks
-    - Deleted chunks
-    - Final chunk total
-• Logs the final update summary to `update_log.txt`.
+- Saves all updated FAISS indexes to disk.
+- Commits the latest file mapping (`file_mapping.pkl`) for future consistency.
+- Produces a summary of:
+    -- Old chunks
+    -- Added chunks
+    -- Deleted chunks
+    -- Final chunk total
+- Logs the final update summary to `update_log.txt`.
 
 ## 6️⃣ END Node
 • Marks successful workflow completion.
