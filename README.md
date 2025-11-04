@@ -27,6 +27,7 @@ The system operates in **two key stages**:
 | ✅ Academic Filter | Restricts to academic queries only; politely blocks unrelated or personal questions. |
 
 # 🏗️ EDUBOT Document Ingestion Architecture (LangGraph Workflow)
+![Ingestion Architecture](https://github.com/pamuarun/AAIDC---Module-1-RAG/blob/main/Architecture/Injestion%20Architecture.png)
 
 ## 📌 Overview
 The Document Ingestion system in EDUBOT automates the entire data pipeline -
