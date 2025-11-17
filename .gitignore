@@ -1,0 +1,86 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.env
+
+# Environment & credentials
+.env.*
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Testing and coverage
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# FAISS database files
+faissdb*
+*.pkl
+*.npy
+
+# Logs
+*.log
+log.txt
+
+# Data or uploads directory
+data/
+uploads/
+*.csv
+*.tsv
+
+# IDE settings
+.idea/
+.vscode/
+
+# Spyder project settings
+.spyderproject
+.spyderworkspace
+
+# Misc
+*.bak
+*.swp
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+
+# Python language/ML tools
+.mypy_cache/
+.ropeproject/
